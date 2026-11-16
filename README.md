@@ -2,7 +2,7 @@
 
 This repository publishes the official QikCal website at https://cal.qik.ai using GitHub Pages. The static production site is in `dist/`.
 
-The site includes the landing page, food catalog guide, privacy policy, support page, and client-side catalog explorer. The explorer contains the same 159,000 food records as the iPhone app. Search and portion calculations run in the visitor's browser.
+The site includes the landing page, food catalog guide, privacy policy, support page, and client-side catalog explorer. The explorer is exported from the packaged iPhone catalog and includes the same 159,088 food records. Search and portion calculations run in the visitor's browser.
 
 ## Publishing
 
