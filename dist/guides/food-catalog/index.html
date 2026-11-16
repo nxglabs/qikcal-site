@@ -4,13 +4,13 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="theme-color" content="#f6f1e6">
-  <meta name="description" content="Search 16,467 U.S. and U.K. food reference records from USDA FoodData Central and U.K. CoFID 2021. Adjust a portion by weight and review its source.">
-  <title>U.S. & U.K. Food Catalog Search | QikCal</title>
+  <meta name="description" content="Search 16,467 USDA and U.K. CoFID food records. See calorie estimates for common foods and use the source-linked portion calculator.">
+  <title>Food Calorie Database: Search &amp; Portions | QikCal</title>
   <link rel="canonical" href="https://cal.qik.ai/guides/food-catalog/">
   <meta property="og:site_name" content="QikCal">
   <meta property="og:type" content="article">
-  <meta property="og:title" content="Search the QikCal food reference catalog">
-  <meta property="og:description" content="Browse USDA FoodData Central and U.K. CoFID records, compare by weight, and follow each result to its published source.">
+  <meta property="og:title" content="Search Food Calories by Name and Portion | QikCal">
+  <meta property="og:description" content="Browse USDA FoodData Central and U.K. CoFID reference records, compare values by weight, and follow each result to its published source.">
   <meta property="og:url" content="https://cal.qik.ai/guides/food-catalog/">
   <meta property="og:image" content="https://cal.qik.ai/assets/og-qikcal.jpg">
   <meta property="og:image:width" content="1200">
@@ -18,8 +18,8 @@
   <meta property="og:image:type" content="image/jpeg">
   <meta property="og:image:alt" content="QikCal brand artwork for a U.S. and U.K. offline food diary">
   <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="Search the QikCal food reference catalog">
-  <meta name="twitter:description" content="Search U.S. and U.K. reference foods and estimate a portion by weight.">
+  <meta name="twitter:title" content="Search Food Calories by Name and Portion | QikCal">
+  <meta name="twitter:description" content="Search U.S. and U.K. reference foods, compare kcal per 100 g, and estimate a portion by weight.">
   <meta name="twitter:image" content="https://cal.qik.ai/assets/og-qikcal.jpg">
   <link rel="icon" href="/assets/mark.svg" type="image/svg+xml">
   <link rel="stylesheet" href="/assets/site.css">
@@ -45,6 +45,28 @@
       <section class="guide-answer" aria-labelledby="catalog-basis">
         <div class="answer-mark" aria-hidden="true">g<br><span>÷ 100</span></div>
         <div><h2 id="catalog-basis">A reference estimate, not a recipe measurement.</h2><p>Food records describe particular foods and editions. Ingredients, preparation and serving size can change the nutrition in a real meal. Use the closest record you can find and enter a portion that reflects what you ate.</p></div>
+      </section>
+
+      <section class="guide-table-section" aria-labelledby="common-foods-heading">
+        <div class="guide-section-heading">
+          <div><p class="eyebrow">Food calorie examples</p><h2 id="common-foods-heading">Calories in common foods by weight.</h2></div>
+          <p>Each value below belongs to the named source record. Search the catalog for more foods and compare their preparation details.</p>
+        </div>
+        <div class="food-table-wrap">
+          <table class="food-table">
+            <thead><tr><th scope="col">Food record</th><th scope="col">kcal per 100 g</th><th scope="col">Dataset</th></tr></thead>
+            <tbody>
+              <tr><th scope="row"><a href="https://fdc.nal.usda.gov/food-details/2709224/nutrients" target="_blank" rel="noopener noreferrer">Banana, raw</a></th><td><strong>97</strong> kcal</td><td>USDA FNDDS, 2021–2023</td></tr>
+              <tr><th scope="row"><a href="https://fdc.nal.usda.gov/food-details/2709215/nutrients" target="_blank" rel="noopener noreferrer">Apple, raw</a></th><td><strong>61</strong> kcal</td><td>USDA FNDDS, 2021–2023</td></tr>
+              <tr><th scope="row"><a href="https://fdc.nal.usda.gov/food-details/2707154/nutrients" target="_blank" rel="noopener noreferrer">Egg, whole, boiled or poached</a></th><td><strong>143</strong> kcal</td><td>USDA FNDDS, 2021–2023</td></tr>
+              <tr><th scope="row"><a href="https://fdc.nal.usda.gov/food-details/2709524/nutrients" target="_blank" rel="noopener noreferrer">Potato, baked, peel eaten</a></th><td><strong>93</strong> kcal</td><td>USDA FNDDS, 2021–2023</td></tr>
+              <tr><th scope="row"><a href="https://fdc.nal.usda.gov/food-details/2705385/nutrients" target="_blank" rel="noopener noreferrer">Milk, whole</a></th><td><strong>61</strong> kcal</td><td>USDA FNDDS, 2021–2023</td></tr>
+              <tr><th scope="row"><a href="https://www.gov.uk/government/publications/composition-of-foods-integrated-dataset-cofid" target="_blank" rel="noopener noreferrer">Porridge oats, unfortified</a><small>Dry record</small></th><td><strong>381</strong> kcal</td><td>U.K. CoFID 2021</td></tr>
+              <tr><th scope="row"><a href="https://www.gov.uk/government/publications/composition-of-foods-integrated-dataset-cofid" target="_blank" rel="noopener noreferrer">Porridge oats, cooked with semi-skimmed milk</a><small>Prepared record</small></th><td><strong>84</strong> kcal</td><td>U.K. CoFID 2021</td></tr>
+            </tbody>
+          </table>
+        </div>
+        <p class="table-caption">These are values for specific reference records, not universal values for every variety or recipe. The two oat records show how the food and preparation described by a source affect the estimate. Values are shown per 100 g; use the calculator below to inspect a different record and portion.</p>
       </section>
 
       <section class="portion-section catalog-section" id="catalog-tool" aria-labelledby="portion-heading">
