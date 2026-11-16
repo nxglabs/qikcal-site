@@ -10,6 +10,6 @@ The `Deploy GitHub Pages` workflow publishes `dist/` on every push to `main` and
 
 ## Updating the catalog and social card
 
-The previous launch video used an outdated sample diary and has been retired. The Open Graph image is generated from brand typography and abstract catalog-inspired artwork, without depicting an app screen. `scripts/compose-social-card.swift` regenerates `dist/assets/og-qikcal.jpg`.
+The silent user-initiated preview at `dist/assets/launch-preview.mp4` uses current Simulator captures, sample diary entries, and estimate disclosures. `dist/assets/launch-preview-poster.jpg` is its poster frame. Keep the player controls, `preload="none"`, and the sample-data disclosure; do not add tracking to the player. The Open Graph image is generated from brand typography and abstract catalog-inspired artwork. `scripts/compose-social-card.swift` regenerates `dist/assets/og-qikcal.jpg`.
 
 To refresh the food catalog, run `scripts/export-food-catalog.py` with the current QikCal database and write its output to `dist/assets/food-catalog.json`. Keep source record IDs, row references, notes, attribution and licence details intact. This static site does not receive or store visitor-entered food weights.
