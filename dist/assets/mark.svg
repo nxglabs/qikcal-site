@@ -1,6 +1,1 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" role="img" aria-label="QikCal">
-  <rect width="64" height="64" rx="18" fill="#f1ead8"/>
-  <path d="M10 34h44c-1.7 13-10 20-22 20S11.8 47 10 34Z" fill="#225b45"/>
-  <path d="M15 28c4-4.2 9-6.3 15-6.3S41 24 45 28" fill="none" stroke="#b8492b" stroke-width="5" stroke-linecap="round"/>
-  <path d="M25 16c1.5-2 3.8-2 5.2 0m5.4 3c1.5-2 3.7-2 5.2 0" fill="none" stroke="#225b45" stroke-width="3.6" stroke-linecap="round"/>
-</svg>
+<svg xmlns="http://www.w3.org/2000/svg" aria-label="QikCal" role="img" viewBox="0 0 64 64"><rect width="64" height="64" fill="#f1ead8" rx="18"/><path fill="#225b45" d="M10 34h44c-1.7 13-10 20-22 20S11.8 47 10 34Z"/><path fill="none" stroke="#b8492b" stroke-linecap="round" stroke-width="5" d="M15 28c4-4.2 9-6.3 15-6.3S41 24 45 28"/><path fill="none" stroke="#225b45" stroke-linecap="round" stroke-width="3.6" d="M25 16c1.5-2 3.8-2 5.2 0m5.4 3c1.5-2 3.7-2 5.2 0"/></svg>
