@@ -267,7 +267,7 @@ a:focus-visible { outline: 3px solid var(--clay); outline-offset: 4px; border-ra
 
 /* Full catalog search and portion estimate */
 .catalog-section { grid-template-columns: minmax(250px, .78fr) minmax(0, 1.22fr); align-items: start; }
-.catalog-controls { grid-template-columns: minmax(0, 1.25fr) minmax(190px, .75fr); gap: 13px; }
+.catalog-controls { grid-template-columns: 1fr; gap: 13px; }
 .catalog-query, .catalog-source { width: 100%; min-height: 48px; padding: 0 12px; border: 1px solid var(--rule); border-radius: 8px; color: var(--ink); background: #fffdf8; font: 14px var(--sans); }
 .catalog-query { caret-color: var(--green); }
 .catalog-query::placeholder { color: #65726a; opacity: 1; }
