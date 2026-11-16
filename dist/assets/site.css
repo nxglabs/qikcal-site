@@ -131,8 +131,7 @@ a:focus-visible { outline: 3px solid var(--clay); outline-offset: 4px; border-ra
   .hero-art::before { width: 90%; }
   .hero-art::after { width: 76%; }
   .phone { width: 260px; }
-  .orbit-one { right: 0; }
-  .orbit-two { left: -2px; bottom: 10%; }
+  .orbit-label { display: none; }
   .section { padding: 73px 0; }
   .preview-section { padding: 68px 0; }
   .preview-layout { grid-template-columns: 1fr; gap: 30px; }
