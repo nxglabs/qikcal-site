@@ -1,0 +1,108 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#f6f1e6">
+  <meta name="description" content="Search 16,467 U.S. and U.K. food reference records from USDA FoodData Central and U.K. CoFID 2021. Adjust a portion by weight and review its source.">
+  <title>U.S. & U.K. Food Catalog Search | QikCal</title>
+  <link rel="canonical" href="https://cal.qik.ai/guides/food-catalog/">
+  <meta property="og:site_name" content="QikCal">
+  <meta property="og:type" content="article">
+  <meta property="og:title" content="Search the QikCal food reference catalog">
+  <meta property="og:description" content="Browse USDA FoodData Central and U.K. CoFID records, compare by weight, and follow each result to its published source.">
+  <meta property="og:url" content="https://cal.qik.ai/guides/food-catalog/">
+  <meta property="og:image" content="https://cal.qik.ai/assets/og-qikcal.jpg">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:type" content="image/jpeg">
+  <meta property="og:image:alt" content="QikCal brand artwork for a U.S. and U.K. offline food diary">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Search the QikCal food reference catalog">
+  <meta name="twitter:description" content="Search U.S. and U.K. reference foods and estimate a portion by weight.">
+  <meta name="twitter:image" content="https://cal.qik.ai/assets/og-qikcal.jpg">
+  <link rel="icon" href="/assets/mark.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="/assets/site.css">
+</head>
+<body>
+  <header class="wrap topbar">
+    <a class="brand" href="/" aria-label="QikCal home"><img src="/assets/mark.svg" alt=""><span>QikCal</span></a>
+    <nav class="nav" aria-label="Main navigation">
+      <a href="/#how-it-works">How it works</a>
+      <a href="/#your-data">Your data</a>
+      <a class="nav-cta" href="/#launch">Pricing</a>
+    </nav>
+  </header>
+  <main class="wrap guide-page">
+    <nav class="breadcrumbs" aria-label="Breadcrumb"><a href="/">Home</a><span aria-hidden="true">/</span><span>Food catalog</span></nav>
+    <article>
+      <header class="guide-hero">
+        <h1>Search the food behind your portion.</h1>
+        <p class="guide-intro">Browse reference foods from the United States and United Kingdom. Choose the closest record, set the weight you ate, and follow it to its published source.</p>
+        <p class="guide-updated">16,467 records · 13,649 USDA · 2,818 U.K. CoFID 2021</p>
+      </header>
+
+      <section class="guide-answer" aria-labelledby="catalog-basis">
+        <div class="answer-mark" aria-hidden="true">g<br><span>÷ 100</span></div>
+        <div><h2 id="catalog-basis">A reference estimate, not a recipe measurement.</h2><p>Food records describe particular foods and editions. Ingredients, preparation and serving size can change the nutrition in a real meal. Use the closest record you can find and enter a portion that reflects what you ate.</p></div>
+      </section>
+
+      <section class="portion-section catalog-section" id="catalog-tool" aria-labelledby="portion-heading">
+        <div class="portion-copy">
+          <h2 id="portion-heading">Find a food record.</h2>
+          <p>Search the bundled catalog, compare its reported energy per 100 g, then enter a portion in grams. Some records have no energy value and remain visible as unavailable.</p>
+          <p><a href="#sources">Review catalog sources and licences ↓</a></p>
+        </div>
+        <div class="portion-card portion-tool" data-food-catalog data-default-food="2708378" data-catalog-url="/assets/food-catalog.json">
+          <p class="portion-label">U.S. and U.K. food reference search · 16,467 records</p>
+          <div class="portion-fields catalog-controls">
+            <div class="portion-field"><label for="catalog-query">Food or ingredient</label><input class="catalog-query" id="catalog-query" type="search" value="oatmeal" placeholder="Try oatmeal, apple or porridge" autocomplete="off" maxlength="120" disabled></div>
+            <div class="portion-field"><label for="catalog-source">Dataset</label><select class="catalog-source" id="catalog-source" disabled><option value="all">All available records</option></select></div>
+          </div>
+          <p class="catalog-local-note">Search and portion calculations run in this browser. This page does not send your search terms or entered weight to QikCal.</p>
+          <div class="catalog-quick-searches" aria-label="Example food searches">
+            <span>Try</span>
+            <button type="button" data-catalog-query="oatmeal" disabled>Oatmeal</button>
+            <button type="button" data-catalog-query="porridge oats" disabled>Porridge oats</button>
+            <button type="button" data-catalog-query="apple" disabled>Apple</button>
+            <button type="button" data-catalog-query="baked potato" disabled>Baked potato</button>
+          </div>
+          <div class="catalog-results-block">
+            <div class="catalog-results-heading"><p id="catalog-status" role="status" aria-live="polite">The catalog loads when this section is nearby.</p><button id="catalog-retry" class="catalog-retry" type="button" hidden>Retry</button></div>
+            <ul class="catalog-results" id="catalog-results" aria-label="Food search results"></ul>
+          </div>
+          <section class="catalog-selected" id="catalog-selected" aria-labelledby="selected-food-name" hidden>
+            <div class="catalog-selected-heading">
+              <div><p class="portion-label">Selected source record</p><h3 id="selected-food-name"></h3><p class="catalog-selected-source" id="selected-food-source"></p></div>
+              <a class="portion-record-link" id="portion-source" href="" target="_blank" rel="noopener noreferrer">View source ↗</a>
+            </div>
+            <p class="catalog-reference-energy" id="selected-food-energy"></p>
+            <p class="catalog-local-note" id="selected-food-reference" hidden></p>
+            <p class="catalog-local-note" id="selected-food-notes" hidden></p>
+            <div class="portion-fields">
+              <div class="portion-field"><label for="portion-grams">Portion weight</label><div class="portion-weight"><input id="portion-grams" type="number" min="1" max="3000" step="any" inputmode="decimal" value="180" aria-describedby="portion-detail" disabled><span aria-hidden="true">g</span></div></div>
+            </div>
+            <button class="portion-serving" id="portion-serving" type="button" disabled>Use listed serving</button>
+            <div class="equation-result" aria-live="polite" aria-atomic="true"><strong id="portion-result">— kcal</strong><span id="portion-detail">Choose a food record to estimate a portion.</span></div>
+            <p class="portion-tool-note">Calculation: source kcal per 100 g × portion grams ÷ 100, rounded to the nearest whole kcal. It is a reference estimate; a recipe can differ.</p>
+            <div class="portion-share"><button class="share-estimate" id="portion-share" type="button" disabled>Share estimate</button><span id="portion-share-status" role="status" aria-live="polite"></span></div>
+          </section>
+          <noscript><p class="portion-tool-note">The interactive search needs JavaScript. You can read about the official source datasets and their licences below.</p></noscript>
+        </div>
+      </section>
+
+      <section class="limits-section" id="sources" aria-labelledby="sources-heading">
+        <h2 id="sources-heading">Two datasets, with their own terms.</h2>
+        <div class="limits-grid">
+          <p><strong>U.S. Department of Agriculture.</strong> FoodData Central records are published under CC0 1.0. USDA requests attribution. The catalog contains Foundation Foods, SR Legacy and FNDDS records. <a href="https://fdc.nal.usda.gov/">Read FoodData Central and its data-use guidance ↗</a></p>
+          <p><strong>U.K. CoFID 2021.</strong> McCance and Widdowson’s Composition of Foods Integrated Dataset is available under the Open Government Licence v3.0 except where third-party rights are identified. Each included row retains its main data reference and notes. <a href="https://www.gov.uk/government/publications/composition-of-foods-integrated-dataset-cofid">Read the official publication and licence ↗</a></p>
+        </div>
+        <p class="guide-disclaimer">Only numeric CoFID values are used; trace and unavailable values remain blank. CoFID alcoholic-drink rows are omitted because their values are per 100 ml while QikCal portions are gram-based. This guide is general food information, not medical or nutrition advice.</p>
+      </section>
+      <aside class="guide-cta"><div><h2>Keep the food. Add your portion.</h2><p>QikCal searches the same reference catalog offline and keeps your diary on your iPhone.</p></div><a class="button" href="/#launch">See planned pricing</a></aside>
+    </article>
+  </main>
+  <footer class="footer"><div class="wrap footer-inner"><span>© 2026 QikCal · Food information is for general reference.</span><div class="footer-links"><a href="/">QikCal</a><a href="#catalog-tool">Search foods</a><a href="/support/">Support</a><a href="/privacy/">Privacy policy</a></div></div></footer>
+  <script src="/assets/food-catalog-explorer.js" defer></script>
+</body>
+</html>

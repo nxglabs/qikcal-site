@@ -41,17 +41,8 @@ private func drawText(
     CTLineDraw(line, context)
 }
 
-private func loadImage(at url: URL) throws -> CGImage {
-    guard let source = CGImageSourceCreateWithURL(url as CFURL, nil),
-          let image = CGImageSourceCreateImageAtIndex(source, 0, nil) else {
-        throw NSError(domain: "QikCalSocialCard", code: 1, userInfo: [NSLocalizedDescriptionKey: "Could not load sample screen at \(url.path)"])
-    }
-    return image
-}
-
 private func compose() throws {
     let root = URL(fileURLWithPath: FileManager.default.currentDirectoryPath, isDirectory: true)
-    let sourceImage = try loadImage(at: root.appendingPathComponent("assets/qikcal-screen-sample.jpg"))
     let outputURL = root.appendingPathComponent("dist/assets/og-qikcal.jpg")
 
     guard let context = CGContext(
@@ -73,7 +64,7 @@ private func compose() throws {
 
     drawText("QikCal", fontName: ".AppleSystemUIFont", size: 28, bold: true, color: green, x: 72, top: 42, context: context)
     context.setFillColor(clay)
-    context.fillEllipse(in: CGRect(x: 177, y: 50, width: 8, height: 8))
+    context.fillEllipse(in: CGRect(x: 177, y: 572, width: 8, height: 8))
 
     drawText("A CALM FOOD DIARY", fontName: ".AppleSystemUIFont", size: 14, bold: true, color: clay, x: 72, top: 105, context: context)
     drawText("Your meals,", fontName: "Georgia-Bold", size: 58, color: ink, x: 70, top: 151, context: context)
@@ -94,23 +85,21 @@ private func compose() throws {
     drawText("·", fontName: ".AppleSystemUIFont", size: 18, color: mutedInk, x: 391, top: 475, context: context)
     drawText("No ads", fontName: ".AppleSystemUIFont", size: 15, bold: true, color: green, x: 412, top: 477, context: context)
 
-    let phoneFrame = CGRect(x: 862, y: 12, width: 278, height: 606)
-    let phonePath = CGPath(roundedRect: phoneFrame, cornerWidth: 34, cornerHeight: 34, transform: nil)
-    context.saveGState()
-    context.addPath(phonePath)
-    context.setShadow(offset: CGSize(width: 0, height: -8), blur: 20, color: CGColor(red: 0.12, green: 0.18, blue: 0.15, alpha: 0.22))
-    context.setFillColor(CGColor(red: 0.99, green: 0.98, blue: 0.95, alpha: 1))
-    context.fillPath()
-    context.restoreGState()
-
-    let screenRect = CGRect(x: 869, y: 28, width: 264, height: 574)
-    context.saveGState()
-    context.addPath(CGPath(roundedRect: screenRect, cornerWidth: 28, cornerHeight: 28, transform: nil))
-    context.clip()
-    context.draw(sourceImage, in: screenRect)
-    context.restoreGState()
-
-    drawText("Sample diary view · USDA values are estimates", fontName: ".AppleSystemUIFont", size: 12, color: mutedInk, x: 74, top: 568, context: context)
+    context.setStrokeColor(green.copy(alpha: 0.34)!)
+    context.setLineWidth(2)
+    for inset in stride(from: 0, through: 4, by: 1) {
+        let diameter = CGFloat(336 - inset * 42)
+        context.strokeEllipse(in: CGRect(x: 832 + CGFloat(inset) * 21, y: 143 + CGFloat(inset) * 21, width: diameter, height: diameter))
+    }
+    context.setFillColor(clay)
+    context.fillEllipse(in: CGRect(x: 976, y: 283, width: 14, height: 14))
+    context.setFillColor(green)
+    context.fillEllipse(in: CGRect(x: 892, y: 210, width: 10, height: 10))
+    context.setFillColor(mutedInk)
+    context.fillEllipse(in: CGRect(x: 1061, y: 374, width: 8, height: 8))
+    drawText("U.S. + U.K.", fontName: ".AppleSystemUIFont", size: 19, bold: true, color: green, x: 925, top: 284, context: context)
+    drawText("Food references, clearly sourced", fontName: ".AppleSystemUIFont", size: 15, color: mutedInk, x: 844, top: 528, context: context)
+    drawText("Estimates · offline diary · no subscription", fontName: ".AppleSystemUIFont", size: 14, color: mutedInk, x: 74, top: 568, context: context)
 
     guard let renderedImage = context.makeImage(),
           let destination = CGImageDestinationCreateWithURL(outputURL as CFURL, UTType.jpeg.identifier as CFString, 1, nil) else {
