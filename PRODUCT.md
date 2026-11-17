@@ -26,7 +26,7 @@ People search the bundled food library, choose a serving or enter grams, log mea
 
 - Native iPhone app targeting iOS 17 and later.
 - Intended storefronts are the United States and United Kingdom.
-- Version 1.0 is in App Review and is not yet downloadable.
+- Version 1.0 has unresolved App Review issues and is not yet downloadable.
 - Planned launch prices are $19.99 in the United States and £14.99 in the United Kingdom; the App Store listing controls the final regional price shown to customers.
 - The diary is local, with no account, analytics SDK, advertising SDK, server-side diary storage, or HealthKit access.
 - Food energy and nutrient values are estimates; some values may be unavailable or vary by preparation. QikCal is not medical advice.
@@ -41,7 +41,7 @@ The product name is QikCal. Existing product language is calm, plain-spoken, and
 
 - A functioning interactive food catalog on the official site.
 - An iPhone Simulator preview video and App Store screenshot set in the app repository; the screenshots use sample diary entries and estimated nutrition values.
-- App Store Connect status emails confirming Version 1.0 is Waiting for Review as of 2026-11-16 22:16 UTC.
+- The App Store Connect API reported the latest Version 1.0 review submission as UNRESOLVED_ISSUES with a REJECTED item at 2026-11-17 02:50 UTC. Apple's issue email points to App Review in App Store Connect; the detailed reason requires an authenticated session.
 - No public download link, customer testimonials, retention data, or verified sales evidence yet.
 
 ## Product Principles
