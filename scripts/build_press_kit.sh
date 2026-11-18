@@ -24,10 +24,12 @@ ABOUT
 QikCal is an offline-first food diary for iPhone. People can search the QikCal Food Library, log portions, save meals they repeat, and review a seven-day view. The diary stays on the iPhone.
 
 AVAILABILITY
-Version 1.0 is not yet available to download in the United States or United Kingdom. We’ll update the official site when the App Store listing is ready.
+Version 1.0 is available in the United States and United Kingdom App Stores.
+United States: https://apps.apple.com/us/app/qikcal-calorie-tracker/id6835332402
+United Kingdom: https://apps.apple.com/gb/app/qikcal-calorie-tracker/id6835332402
 
 PLATFORM AND PRICE
-iPhone, iOS 17 and later. Planned one-time purchase price: \$19.99 in the United States and £14.99 in the United Kingdom. The final price shown to customers is set in the App Store.
+iPhone, iOS 17 and later. One-time purchase: \$19.99 in the United States and £14.99 in the United Kingdom, as shown on each App Store listing.
 
 ACCURACY
 The screenshots contain sample diary entries and estimated nutrition values. Food energy and nutrient values are for general reference, may be missing or vary with preparation, and are not medical advice. Do not present the sample entries as customer data.
