@@ -1,0 +1,87 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#f6f1e6">
+  <meta name="description" content="Try five quick food-fact comparisons using specific QikCal Food Library records. Play in your browser and choose whether to share your score.">
+  <title>Food Facts Challenge: Guess Calories per 100 g | QikCal</title>
+  <link rel="canonical" href="https://cal.qik.ai/challenge/">
+  <meta property="og:site_name" content="QikCal">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Can you beat the QikCal Food Facts Challenge?">
+  <meta property="og:description" content="Five quick comparisons. Pick the food record with more calories per 100 g and share your score if you choose.">
+  <meta property="og:url" content="https://cal.qik.ai/challenge/">
+  <meta property="og:image" content="https://cal.qik.ai/assets/og-qikcal.jpg">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:type" content="image/jpeg">
+  <meta property="og:image:alt" content="QikCal brand artwork">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="QikCal Food Facts Challenge">
+  <meta name="twitter:description" content="Five quick comparisons from specific food records. Which has more calories per 100 g?">
+  <meta name="twitter:image" content="https://cal.qik.ai/assets/og-qikcal.jpg">
+  <link rel="icon" href="/assets/mark.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="/assets/site.css">
+</head>
+<body>
+  <header class="wrap topbar">
+    <a class="brand" href="/" aria-label="QikCal home"><img src="/assets/mark.svg" alt=""><span>QikCal</span></a>
+    <nav class="nav" aria-label="Main navigation">
+      <a href="/guides/food-catalog/">Food catalog</a>
+      <a class="nav-cta" href="/#launch">Pricing</a>
+    </nav>
+  </header>
+  <main class="wrap challenge-page">
+    <nav class="breadcrumbs" aria-label="Breadcrumb"><a href="/">Home</a><span aria-hidden="true">/</span><span>Food facts challenge</span></nav>
+    <header class="challenge-hero">
+      <p class="eyebrow">QikCal food facts challenge</p>
+      <h1>Which food has more calories?</h1>
+      <p class="challenge-intro">Five quick comparisons from specific food records. Pick the record with more calories per 100 g, then see how you did.</p>
+    </header>
+
+    <section class="challenge-board" data-food-challenge aria-labelledby="challenge-question" hidden>
+      <div class="challenge-progress"><span id="challenge-step">Question 1 of 5</span><span id="challenge-score">0 correct</span></div>
+      <h2 id="challenge-question">Which food record has more calories per 100 g?</h2>
+      <fieldset class="challenge-options" id="challenge-options">
+        <legend class="sr-only">Choose the food record with more calories per 100 g</legend>
+        <button class="challenge-choice" type="button" data-choice="0"></button>
+        <button class="challenge-choice" type="button" data-choice="1"></button>
+      </fieldset>
+      <p class="challenge-feedback" id="challenge-feedback" role="status" aria-live="polite"></p>
+      <div class="challenge-controls">
+        <button class="button" id="challenge-next" type="button" hidden>Next question</button>
+      </div>
+      <section class="challenge-result" id="challenge-result" aria-labelledby="challenge-result-title" hidden>
+        <p class="eyebrow">Your result</p>
+        <h2 id="challenge-result-title"></h2>
+        <p id="challenge-result-copy"></p>
+        <div class="challenge-share-actions">
+          <button class="button" id="challenge-share" type="button">Share your score</button>
+          <button class="button button-light" id="challenge-restart" type="button">Play again</button>
+        </div>
+        <p class="challenge-share-status" id="challenge-share-status" role="status" aria-live="polite"></p>
+        <textarea class="challenge-share-fallback" id="challenge-share-fallback" aria-label="Score message to copy" readonly hidden></textarea>
+      </section>
+    </section>
+    <noscript><p class="challenge-noscript">The five-question challenge needs JavaScript in your browser. It does not send your answers to QikCal. Browse the <a href="/guides/food-catalog/">food catalog guide</a> instead.</p></noscript>
+
+    <p class="challenge-caveat">These are reference estimates for the exact food records shown, rounded to whole kcal per 100 g. A different variety, preparation, recipe, or portion can have a different value. This challenge is general food information, not medical or nutrition advice.</p>
+    <p class="catalog-source-note">Food data sources include <a href="https://fdc.nal.usda.gov/">USDA FoodData Central</a> (CC0 1.0) and the <a href="https://www.gov.uk/government/publications/composition-of-foods-integrated-dataset-cofid">CoFID 2021 dataset</a>. Contains public sector information licensed under the <a href="https://www.nationalarchives.gov.uk/doc/open-government-licence/version/3/">Open Government Licence v3.0</a>.</p>
+
+    <aside class="guide-cta challenge-app-cta">
+      <div>
+        <h2>Keep the food. Add your portion.</h2>
+        <p>Search foods offline, adjust the portion, and keep your diary on your iPhone.</p>
+        <p class="guide-cta-price">One-time purchase: $19.99 in the U.S. · £14.99 in the U.K.</p>
+      </div>
+      <div class="guide-cta-actions" aria-label="Choose your App Store">
+        <a class="button" href="https://apps.apple.com/us/app/qikcal-calorie-tracker/id6835332402" aria-label="Get QikCal from the U.S. App Store for $19.99">U.S. App Store · $19.99</a>
+        <a class="button" href="https://apps.apple.com/gb/app/qikcal-calorie-tracker/id6835332402" aria-label="Get QikCal from the U.K. App Store for £14.99">U.K. App Store · £14.99</a>
+      </div>
+    </aside>
+  </main>
+  <footer class="footer"><div class="wrap footer-inner"><span>© 2026 QikCal · Food information is for general reference.</span><div class="footer-links"><a href="/">QikCal</a><a href="/guides/food-catalog/">Food catalog</a><a href="/support/">Support</a><a href="/privacy/">Privacy policy</a></div></div></footer>
+  <script src="/assets/food-challenge.js" defer></script>
+</body>
+</html>
