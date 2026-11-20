@@ -212,6 +212,8 @@ a:focus-visible { outline: 3px solid var(--clay); outline-offset: 4px; border-ra
 .guide-cta h2 { margin-bottom: 7px; font-size: 33px; }
 .guide-cta p:last-child { margin: 0; color: #d3dfd7; font-size: 12px; line-height: 1.65; }
 .guide-cta .button { flex-shrink: 0; border-color: #f0c66c; color: var(--green-deep); background: #f0c66c; }
+.guide-cta-actions { display: flex; flex-wrap: wrap; gap: 11px; }
+.guide-cta .guide-cta-price { margin-top: 7px; color: #d3dfd7; font-size: 12px; }
 .source-note { padding: 18px 0 44px; border-top: 1px solid var(--rule); color: var(--muted); font-size: 11px; line-height: 1.7; }
 .source-note p { max-width: 75ch; margin: 0 0 9px; }
 .source-note a { color: var(--green); }
