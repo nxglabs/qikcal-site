@@ -212,6 +212,7 @@ a:focus-visible { outline: 3px solid var(--clay); outline-offset: 4px; border-ra
 .guide-cta h2 { margin-bottom: 7px; font-size: 33px; }
 .guide-cta p:last-child { margin: 0; color: #d3dfd7; font-size: 12px; line-height: 1.65; }
 .guide-cta .button { flex-shrink: 0; border-color: #f0c66c; color: var(--green-deep); background: #f0c66c; }
+.guide-cta .button:hover { color: #fffdf7; }
 .guide-cta-actions { display: flex; flex-wrap: wrap; gap: 11px; }
 .guide-cta .guide-cta-price { margin-top: 7px; color: #d3dfd7; font-size: 12px; }
 .challenge-promo { display: flex; justify-content: space-between; align-items: center; gap: 25px; margin: 0 0 48px; padding: 25px 28px; border: 1px solid var(--rule); border-radius: 16px; background: #fffdf8; }
