@@ -384,6 +384,8 @@ a:focus-visible { outline: 3px solid var(--clay); outline-offset: 4px; border-ra
 /* Full catalog search and portion estimate */
 .catalog-section { grid-template-columns: minmax(250px, .78fr) minmax(0, 1.22fr); align-items: start; }
 .catalog-controls { grid-template-columns: 1fr; gap: 13px; }
+.catalog-preview-note { margin: 14px 0 17px; padding: 13px 15px; border: 1px solid rgba(36, 91, 69, .16); border-radius: 11px; color: var(--green-deep); background: rgba(36, 91, 69, .07); font-size: 13px; line-height: 1.55; }
+.catalog-preview-note strong { display: block; margin-bottom: 3px; }
 .catalog-query, .catalog-source { width: 100%; min-height: 48px; padding: 0 12px; border: 1px solid var(--rule); border-radius: 8px; color: var(--ink); background: #fffdf8; font: 14px var(--sans); }
 .catalog-query { caret-color: var(--green); }
 .catalog-query::placeholder { color: #65726a; opacity: 1; }
