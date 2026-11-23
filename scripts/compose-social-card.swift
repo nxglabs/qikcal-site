@@ -111,5 +111,77 @@ private func compose() throws {
     }
 }
 
+private func composeChallenge() throws {
+    let root = URL(fileURLWithPath: FileManager.default.currentDirectoryPath, isDirectory: true)
+    let outputURL = root.appendingPathComponent("dist/assets/og-qikcal-challenge.jpg")
+    guard let context = CGContext(
+        data: nil,
+        width: width,
+        height: height,
+        bitsPerComponent: 8,
+        bytesPerRow: width * 4,
+        space: colorSpace,
+        bitmapInfo: CGImageAlphaInfo.noneSkipLast.rawValue
+    ) else {
+        throw NSError(domain: "QikCalSocialCard", code: 5, userInfo: [NSLocalizedDescriptionKey: "Could not create the challenge-card canvas"])
+    }
+
+    context.setFillColor(paper)
+    context.fill(CGRect(x: 0, y: 0, width: width, height: height))
+    context.setFillColor(deepPaper.copy(alpha: 0.46)!)
+    context.fillEllipse(in: CGRect(x: 780, y: -75, width: 520, height: 760))
+
+    drawText("QikCal", fontName: ".AppleSystemUIFont", size: 28, bold: true, color: green, x: 72, top: 42, context: context)
+    drawText("FOOD FACTS CHALLENGE", fontName: ".AppleSystemUIFont", size: 15, bold: true, color: clay, x: 72, top: 128, context: context)
+    drawText("Which food", fontName: "Georgia-Bold", size: 58, color: ink, x: 70, top: 185, context: context)
+    drawText("has more?", fontName: "Georgia-Bold", size: 64, color: clay, x: 70, top: 253, context: context)
+    drawText("Five quick comparisons.", fontName: ".AppleSystemUIFont", size: 23, color: mutedInk, x: 74, top: 367, context: context)
+    drawText("Estimate calories per 100 g.", fontName: ".AppleSystemUIFont", size: 23, color: mutedInk, x: 74, top: 406, context: context)
+    drawText("Reference values for selected food records.", fontName: ".AppleSystemUIFont", size: 15, color: mutedInk, x: 74, top: 560, context: context)
+
+    let cardFill = CGColor(red: 0.985, green: 0.975, blue: 0.949, alpha: 1)
+    context.setFillColor(cardFill)
+    for x in [750.0, 965.0] {
+        let card = CGRect(x: x, y: 165, width: 178, height: 300)
+        context.addPath(CGPath(roundedRect: card, cornerWidth: 26, cornerHeight: 26, transform: nil))
+        context.fillPath()
+    }
+
+    drawText("A", fontName: ".AppleSystemUIFont", size: 21, bold: true, color: clay, x: 830, top: 190, context: context)
+    drawText("B", fontName: ".AppleSystemUIFont", size: 21, bold: true, color: green, x: 1_044, top: 190, context: context)
+    for centerX in [839.0, 1_054.0] {
+        context.setStrokeColor(green.copy(alpha: 0.24)!)
+        context.setLineWidth(5)
+        context.strokeEllipse(in: CGRect(x: centerX - 59, y: 227, width: 118, height: 118))
+        context.setStrokeColor(deepPaper)
+        context.setLineWidth(3)
+        context.strokeEllipse(in: CGRect(x: centerX - 45, y: 241, width: 90, height: 90))
+    }
+    context.setFillColor(clay)
+    context.fillEllipse(in: CGRect(x: 825, y: 273, width: 28, height: 28))
+    context.fillEllipse(in: CGRect(x: 1_045, y: 262, width: 16, height: 16))
+    context.fillEllipse(in: CGRect(x: 1_061, y: 278, width: 16, height: 16))
+    context.fillEllipse(in: CGRect(x: 1_045, y: 294, width: 16, height: 16))
+    context.setFillColor(green)
+    context.fillEllipse(in: CGRect(x: 1_061, y: 294, width: 16, height: 16))
+
+    let versus = CGRect(x: 922, y: 284, width: 48, height: 48)
+    context.setFillColor(ink)
+    context.fillEllipse(in: versus)
+    drawText("VS", fontName: ".AppleSystemUIFont", size: 14, bold: true, color: cardFill, x: 934, top: 297, context: context)
+    drawText("100 g", fontName: ".AppleSystemUIFont", size: 16, bold: true, color: mutedInk, x: 807, top: 408, context: context)
+    drawText("100 g", fontName: ".AppleSystemUIFont", size: 16, bold: true, color: mutedInk, x: 1_022, top: 408, context: context)
+
+    guard let renderedImage = context.makeImage(),
+          let destination = CGImageDestinationCreateWithURL(outputURL as CFURL, UTType.jpeg.identifier as CFString, 1, nil) else {
+        throw NSError(domain: "QikCalSocialCard", code: 6, userInfo: [NSLocalizedDescriptionKey: "Could not create the challenge-card JPEG"])
+    }
+    CGImageDestinationAddImage(destination, renderedImage, [kCGImageDestinationLossyCompressionQuality: 0.92] as CFDictionary)
+    guard CGImageDestinationFinalize(destination) else {
+        throw NSError(domain: "QikCalSocialCard", code: 7, userInfo: [NSLocalizedDescriptionKey: "Could not encode the challenge-card JPEG"])
+    }
+}
+
 try compose()
-print("Wrote dist/assets/og-qikcal.jpg")
+try composeChallenge()
+print("Wrote dist/assets/og-qikcal.jpg and dist/assets/og-qikcal-challenge.jpg")
