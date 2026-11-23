@@ -61,6 +61,12 @@
           <button class="button button-light" id="challenge-restart" type="button">Play again</button>
         </div>
         <p class="challenge-share-status" id="challenge-share-status" role="status" aria-live="polite"></p>
+        <p class="challenge-share-note">Your score card is made in your browser. It leaves your device only when you choose to share it.</p>
+        <figure class="challenge-share-preview" id="challenge-share-preview" hidden>
+          <img id="challenge-share-image" alt="">
+          <figcaption>Your score card. Choose whether to share or download it.</figcaption>
+        </figure>
+        <a class="button button-light challenge-card-download" id="challenge-card-download" href="#" download="qikcal-food-facts-score.png" hidden>Download score card</a>
         <textarea class="challenge-share-fallback" id="challenge-share-fallback" aria-label="Score message to copy" readonly hidden></textarea>
       </section>
     </section>

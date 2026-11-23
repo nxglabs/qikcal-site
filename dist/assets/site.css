@@ -248,6 +248,11 @@ a:focus-visible { outline: 3px solid var(--clay); outline-offset: 4px; border-ra
 .challenge-result > p:not(.eyebrow) { color: var(--muted); font-size: 14px; line-height: 1.65; }
 .challenge-share-actions { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 19px; }
 .challenge-share-status { min-height: 22px; margin: 13px 0 0; color: var(--muted); font-size: 12px; }
+.challenge-share-note { max-width: 62ch; margin: 5px 0 0; color: var(--muted); font-size: 11px; line-height: 1.55; }
+.challenge-share-preview { max-width: 360px; margin: 18px 0 0; }
+.challenge-share-preview img { display: block; width: 100%; height: auto; border: 1px solid var(--rule); border-radius: 12px; background: var(--paper); }
+.challenge-share-preview figcaption { margin-top: 8px; color: var(--muted); font-size: 11px; }
+.challenge-card-download { width: fit-content; margin-top: 12px; }
 .challenge-share-fallback { display: block; width: 100%; min-height: 78px; margin-top: 9px; padding: 12px; border: 1px solid var(--rule); border-radius: 8px; color: var(--ink); background: var(--paper); font: 13px/1.5 var(--sans); }
 .challenge-caveat, .challenge-noscript { margin: 26px 0 0; padding: 16px 18px; color: var(--muted); background: #efe9dc; font-size: 12px; line-height: 1.7; }
 .challenge-noscript a { color: var(--green); }
