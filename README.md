@@ -8,6 +8,10 @@ The site includes the landing page, food catalog guide, privacy policy, support 
 
 The `Deploy GitHub Pages` workflow publishes `dist/` on every push to `main` and can also be run manually. The GitHub Pages custom domain is configured as `cal.qik.ai` in repository settings. The DNS record for `cal.qik.ai` should be a DNS-only CNAME to `nxglabs.github.io`.
 
+## Search indexing
+
+The public sitemap is at `https://cal.qik.ai/sitemap.xml`. A public IndexNow verification file is hosted at the site root. When a public page is added or materially updated, notify IndexNow about that specific canonical URL; a successful API response confirms receipt, not crawling, indexing, or ranking.
+
 ## Updating the catalog and social card
 
 The silent user-initiated preview at `dist/assets/launch-preview.mp4` uses current Simulator captures, sample diary entries, and estimate disclosures. `dist/assets/launch-preview-poster.jpg` is its poster frame. Keep the player controls, `preload="none"`, and the sample-data disclosure; do not add tracking to the player. The Open Graph images are generated from brand typography and abstract catalog-inspired artwork. `scripts/compose-social-card.swift` regenerates `dist/assets/og-qikcal.jpg` and `dist/assets/og-qikcal-challenge.jpg`.
