@@ -1,0 +1,125 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#f6f1e6">
+  <meta name="description" content="Estimate calories by grams: enter kcal per 100 g and a portion weight. This free browser calculator does not save or send your values.">
+  <title>Calorie Calculator by Grams and Portion | QikCal</title>
+  <link rel="canonical" href="https://cal.qik.ai/calorie-calculator-by-grams/">
+  <meta property="og:site_name" content="QikCal">
+  <meta property="og:type" content="article">
+  <meta property="og:title" content="Calorie Calculator by Grams and Portion | QikCal">
+  <meta property="og:description" content="Scale a food's kcal per 100 g value to your weighed portion with a free, private browser calculator.">
+  <meta property="og:url" content="https://cal.qik.ai/calorie-calculator-by-grams/">
+  <meta property="og:image" content="https://cal.qik.ai/assets/og-qikcal.jpg">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:type" content="image/jpeg">
+  <meta property="og:image:alt" content="QikCal brand artwork for a private iPhone food diary">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Calorie Calculator by Grams and Portion | QikCal">
+  <meta name="twitter:description" content="Enter kcal per 100 g and your portion weight to estimate calories by grams.">
+  <meta name="twitter:image" content="https://cal.qik.ai/assets/og-qikcal.jpg">
+  <link rel="icon" href="/assets/mark.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="/assets/site.css">
+</head>
+<body>
+  <header class="wrap topbar">
+    <a class="brand" href="/" aria-label="QikCal home"><img src="/assets/mark.svg" alt=""><span>QikCal</span></a>
+    <nav class="nav" aria-label="Main navigation">
+      <a href="/guides/food-catalog/">Food catalog</a>
+      <a href="/guides/food-catalog/#catalog-tool">Search foods</a>
+      <a class="nav-cta" href="/#launch">Pricing</a>
+    </nav>
+  </header>
+
+  <main class="wrap guide-page">
+    <nav class="breadcrumbs" aria-label="Breadcrumb"><a href="/">Home</a><span aria-hidden="true">/</span><span>Calorie calculator by grams</span></nav>
+    <article>
+      <header class="guide-hero">
+        <h1>Estimate calories for the portion you weighed.</h1>
+        <p class="guide-intro">Enter a food's energy value per 100 g and the weight of your portion. The calculator scales those two numbers; it does not identify food or measure a meal.</p>
+      </header>
+
+      <section class="portion-section calculator-section" aria-labelledby="calculator-title">
+        <div class="portion-copy">
+          <h2 id="calculator-title">Use the same food value, then scale by grams.</h2>
+          <p>For a value listed per 100 g, multiply it by your portion weight and divide by 100. The result is a rounded estimate based only on the value you enter.</p>
+          <p><a href="/guides/food-catalog/#catalog-tool">Look up a food value in the QikCal Food Library.</a></p>
+        </div>
+        <div class="portion-card calculator-card">
+          <p class="portion-label">CALORIES BY GRAMS</p>
+          <div class="portion-fields">
+            <div class="portion-field">
+              <label for="energy-per-100g">Energy per 100 g</label>
+              <div class="portion-weight"><input id="energy-per-100g" type="number" min="0" max="10000" step="any" inputmode="decimal" autocomplete="off" aria-describedby="energy-help"><span aria-hidden="true">kcal</span></div>
+            </div>
+            <div class="portion-field">
+              <label for="portion-weight-g">Portion weight</label>
+              <div class="portion-weight"><input id="portion-weight-g" type="number" min="0.1" max="10000" step="any" inputmode="decimal" autocomplete="off" aria-describedby="weight-help"><span aria-hidden="true">g</span></div>
+            </div>
+          </div>
+          <p class="calculator-help" id="energy-help">Use the value shown per 100 g on a label or food record.</p>
+          <p class="calculator-help" id="weight-help">Enter the weight of the portion you want to estimate.</p>
+          <div class="calculator-actions">
+            <button class="button" id="fill-example" type="button">Use example values</button>
+            <button class="button button-light" id="clear-calculator" type="button">Clear</button>
+          </div>
+          <div class="equation-result calculator-result" aria-live="polite" aria-atomic="true">
+            <strong id="portion-output">— kcal</strong>
+            <span id="portion-status" role="status">Enter both values to estimate a portion.</span>
+          </div>
+          <p class="portion-tool-note">Formula: kcal per 100 g × portion grams ÷ 100, rounded to the nearest whole kcal.</p>
+          <p class="calculator-privacy">Your entries stay in this browser. This page does not save or send them.</p>
+          <noscript><p class="portion-tool-note">JavaScript is needed for the live result. You can still use the formula above with a calculator.</p></noscript>
+        </div>
+      </section>
+
+      <section class="guide-answer" aria-labelledby="worked-example">
+        <div class="answer-mark" aria-hidden="true">kcal<br><span>× grams ÷ 100</span></div>
+        <div>
+          <h2 id="worked-example">A quick example: 250 kcal per 100 g.</h2>
+          <p>For a 40 g portion, calculate 250 × 40 ÷ 100 = 100 kcal. These are example inputs to show the arithmetic, not a value for a particular food.</p>
+        </div>
+      </section>
+
+      <section class="guide-table-section" aria-labelledby="steps-title">
+        <div class="guide-section-heading">
+          <div><h2 id="steps-title">How to estimate a portion from a label.</h2></div>
+          <p>Keep the energy value and portion weight on the same basis before calculating.</p>
+        </div>
+        <div class="sequence">
+          <article class="step"><h3>Find the reference value</h3><p>Read the label or choose a food record. If the value is per 100 g, enter it as shown. A food record describes that food and preparation, not every version of it.</p></article>
+          <article class="step"><h3>Weigh the portion</h3><p>Enter the grams for the amount you want to estimate. If you use a label's per-serving value instead, first divide by that serving's gram weight and multiply by 100.</p></article>
+          <article class="step"><h3>Read the estimate</h3><p>The calculator multiplies kcal per 100 g by grams and divides by 100. For a recipe, estimate ingredients separately, add them, then divide by equal portions; ingredients left in a pan or uneven portions can change the result.</p></article>
+        </div>
+      </section>
+
+      <section class="limits-section" aria-labelledby="calculator-questions">
+        <h2 id="calculator-questions">Questions about calorie estimates.</h2>
+        <details><summary>What if my label shows calories per serving?</summary><p>Divide the stated calories by the serving's weight in grams, then multiply by 100 to get a per-100 g value. For example, 210 kcal in a 60 g serving is 350 kcal per 100 g. Then enter 350 and the weight of your portion.</p></details>
+        <details><summary>Does this calculator identify the food?</summary><p>No. It only scales the number you provide. To find a reference value by food name, try the <a href="/guides/food-catalog/#catalog-tool">QikCal Food Library browser preview</a>.</p></details>
+        <details><summary>Are the results exact?</summary><p>No. The arithmetic follows the inputs, but labels and food records can differ from the food you ate. Ingredients, preparation, recipe, and portion weight all matter.</p></details>
+        <details><summary>Does the calculator save what I enter?</summary><p>No. The calculator runs in your browser and does not save or send your values. The separate iPhone diary is a one-time App Store purchase; it has no in-app free trial.</p></details>
+        <p class="guide-disclaimer">This tool is for general food reference, not medical or nutrition advice. For guidance about a medical condition, consult your doctor or a qualified healthcare professional.</p>
+      </section>
+
+      <aside class="guide-cta">
+        <div>
+          <h2>Find a food, then choose your portion.</h2>
+          <p>Try food search and portion estimates free in your browser. The preview does not save diary entries.</p>
+          <p class="guide-cta-price">The iPhone diary is a one-time purchase: $19.99 in the U.S. · £14.99 in the U.K. · No in-app free trial.</p>
+        </div>
+        <div class="guide-cta-actions" aria-label="Explore QikCal">
+          <a class="button" href="/guides/food-catalog/#catalog-tool">Try food search</a>
+          <a class="button button-light" href="/">See the iPhone app</a>
+        </div>
+      </aside>
+    </article>
+  </main>
+
+  <footer class="footer"><div class="wrap footer-inner"><span>© 2026 QikCal · Food information is for general reference.</span><div class="footer-links"><a href="/guides/food-catalog/">Food catalog</a><a href="/guides/food-catalog/#catalog-tool">Search foods</a><a href="/privacy/">Privacy policy</a><a href="/support/">Support</a></div></div></footer>
+  <script src="/assets/calorie-calculator-by-grams.js" defer></script>
+</body>
+</html>
