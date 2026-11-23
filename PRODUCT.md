@@ -25,9 +25,9 @@ People search the bundled food library, choose a serving or enter grams, log mea
 ## Capabilities and Constraints
 
 - Native iPhone app targeting iOS 17 and later.
-- Intended storefronts are the United States and United Kingdom.
-- Version 1.0 has unresolved App Review issues and is not yet downloadable.
-- Planned launch prices are $19.99 in the United States and £14.99 in the United Kingdom; the App Store listing controls the final regional price shown to customers.
+- App Store availability is selected for all 175 countries and regions. On 23 November 2026, the U.S. and U.K. were publicly verified as Available; the other 173 were still Processing to Available in App Store Connect. Paid marketing and proactive promotional outreach are limited to the U.S. and U.K.
+- Version 1.0 is approved and downloadable (READY_FOR_SALE; workflow 45110157958 on 23 November 2026).
+- Verified storefront prices on 23 November 2026 are $19.99 in the United States and £14.99 in the United Kingdom; the App Store listing controls the final regional price shown to customers.
 - The diary is local, with no account, analytics SDK, advertising SDK, server-side diary storage, or HealthKit access.
 - Food energy and nutrient values are estimates; some values may be unavailable or vary by preparation. QikCal is not medical advice.
 - Food data source and licence notes for USDA FoodData Central and CoFID 2021 are included in Settings and the official guide.
@@ -41,8 +41,8 @@ The product name is QikCal. Existing product language is calm, plain-spoken, and
 
 - A functioning interactive food catalog on the official site.
 - An iPhone Simulator preview video and App Store screenshot set in the app repository; the screenshots use sample diary entries and estimated nutrition values.
-- The App Store Connect API reported the latest Version 1.0 review submission as UNRESOLVED_ISSUES with a REJECTED item at 2026-11-17 02:50 UTC. Apple's issue email points to App Review in App Store Connect; the detailed reason requires an authenticated session.
-- No public download link, customer testimonials, retention data, or verified sales evidence yet.
+- Earlier Version 1.0 review issues were resolved; current approval, sale, and download status is recorded in the latest read-only App Store workflow checkpoint.
+- Public U.S. and U.K. App Store product pages were verified on 23 November 2026. No customer testimonials, retention data, or verified sales evidence is available yet.
 
 ## Product Principles
 
