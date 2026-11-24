@@ -4,13 +4,13 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="theme-color" content="#f6f1e6">
-  <meta name="description" content="Search 159,000 foods in the QikCal Food Library. See calorie estimates and choose a portion by weight.">
-  <title>Food Calorie Database: Search &amp; Portions | QikCal</title>
+  <meta name="description" content="Search 159,000 foods, add portions by weight, and build a temporary meal calorie estimate in QikCal's free browser preview. Nothing is saved.">
+  <title>Free Meal Calorie Calculator: Search Foods &amp; Add Portions | QikCal</title>
   <link rel="canonical" href="https://cal.qik.ai/guides/food-catalog/">
   <meta property="og:site_name" content="QikCal">
   <meta property="og:type" content="article">
-  <meta property="og:title" content="Search Food Calories by Name and Portion | QikCal">
-  <meta property="og:description" content="Browse 159,000 foods, compare calorie estimates by weight, and choose a serving size.">
+  <meta property="og:title" content="Free Meal Calorie Calculator: Search &amp; Add Portions | QikCal">
+  <meta property="og:description" content="Search the QikCal Food Library, add portions by weight, and see a temporary meal estimate. The free preview saves nothing.">
   <meta property="og:url" content="https://cal.qik.ai/guides/food-catalog/">
   <meta property="og:image" content="https://cal.qik.ai/assets/og-qikcal.jpg">
   <meta property="og:image:width" content="1200">
@@ -18,8 +18,8 @@
   <meta property="og:image:type" content="image/jpeg">
   <meta property="og:image:alt" content="QikCal brand artwork for a U.S. and U.K. offline food diary">
   <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="Search Food Calories by Name and Portion | QikCal">
-  <meta name="twitter:description" content="Search 159,000 foods, compare kcal per 100 g, and estimate a portion by weight.">
+  <meta name="twitter:title" content="Free Meal Calorie Calculator: Search &amp; Add Portions | QikCal">
+  <meta name="twitter:description" content="Search 159,000 foods, add portions by weight, and see a temporary meal estimate in your browser.">
   <meta name="twitter:image" content="https://cal.qik.ai/assets/og-qikcal.jpg">
   <link rel="icon" href="/assets/mark.svg" type="image/svg+xml">
   <link rel="stylesheet" href="/assets/site.css">
@@ -37,8 +37,8 @@
     <nav class="breadcrumbs" aria-label="Breadcrumb"><a href="/">Home</a><span aria-hidden="true">/</span><span>Food catalog</span></nav>
     <article>
       <header class="guide-hero">
-        <h1>Search the food behind your portion.</h1>
-        <p class="guide-intro">Browse the 159,000-food QikCal Food Library. Choose the closest record, set the weight you ate, and see a clear calorie estimate.</p>
+        <h1>Search foods. Build a meal estimate.</h1>
+        <p class="guide-intro">Try the QikCal Food Library free in your browser. Choose food records, set each portion by weight, and add them to a temporary meal total before buying the iPhone diary.</p>
         <p class="guide-updated">159,088 food records in the iPhone app</p>
       </header>
 
@@ -77,11 +77,11 @@
         </div>
         <div class="portion-card portion-tool" data-food-catalog data-default-food="1008" data-catalog-url="/assets/food-catalog.json">
           <p class="portion-label">QikCal Food Library · 159,000 foods</p>
-          <p class="catalog-preview-note"><strong>Free browser preview.</strong> Search foods and estimate a portion here before buying. It does not save diary entries; the iPhone diary is a one-time purchase ($19.99 in the U.S. · £14.99 in the U.K.) with no in-app free trial.</p>
+          <p class="catalog-preview-note"><strong>Free browser preview.</strong> Search foods, add portions, and see a temporary meal estimate here before buying. The list stays in this page and is not saved or sent. The iPhone diary is a one-time purchase ($19.99 in the U.S. · £14.99 in the U.K.) with no in-app free trial.</p>
           <div class="portion-fields catalog-controls">
             <div class="portion-field"><label for="catalog-query">Food or ingredient</label><input class="catalog-query" id="catalog-query" type="search" value="oatmeal" placeholder="Try oatmeal, apple or porridge" autocomplete="off" maxlength="120" disabled></div>
           </div>
-          <p class="catalog-local-note">Search and portion calculations run in this browser. This page does not send your search terms or entered weight to QikCal.</p>
+          <p class="catalog-local-note">Search, portion calculations, and this temporary meal estimate run in your browser. Nothing is saved or sent to QikCal.</p>
           <div class="catalog-quick-searches" aria-label="Example food searches">
             <span>Try</span>
             <button type="button" data-catalog-query="oatmeal" disabled>Oatmeal</button>
@@ -105,6 +105,27 @@
             <div class="equation-result" aria-live="polite" aria-atomic="true"><strong id="portion-result">— kcal</strong><span id="portion-detail">Choose a food record to estimate a portion.</span></div>
             <p class="portion-tool-note">Calculation: QikCal Food Library kcal per 100 g × portion grams ÷ 100, rounded to the nearest whole kcal. It is an estimate; a recipe can differ.</p>
             <div class="portion-share"><button class="share-estimate" id="portion-share" type="button" disabled>Share estimate</button><span id="portion-share-status" role="status" aria-live="polite"></span></div>
+            <div class="meal-add-row">
+              <button class="meal-add-button" id="add-to-meal" type="button" disabled>Add this portion to meal</button>
+              <span id="meal-add-status" role="status" aria-live="polite"></span>
+            </div>
+          </section>
+          <section class="meal-estimate" aria-labelledby="meal-estimate-title">
+            <div class="meal-estimate-head">
+              <div>
+                <p class="portion-label">Temporary · browser only</p>
+                <h3 id="meal-estimate-title">Meal estimate</h3>
+                <p class="meal-estimate-note">Add food portions above. This list is not a diary entry and disappears when you leave the page.</p>
+              </div>
+              <div class="meal-estimate-total" aria-live="polite" aria-atomic="true">
+                <span>Estimated total</span>
+                <strong id="meal-total">0 kcal</strong>
+                <small id="meal-count">0 portions</small>
+              </div>
+            </div>
+            <p class="meal-empty" id="meal-empty">Choose a food record and add its portion to begin.</p>
+            <ul class="meal-items" id="meal-items" aria-label="Temporary meal portions"></ul>
+            <button class="meal-clear" id="clear-meal" type="button" disabled>Clear meal</button>
           </section>
           <noscript><p class="portion-tool-note">The interactive food search needs JavaScript. Use the app for offline search and portion logging.</p></noscript>
         </div>

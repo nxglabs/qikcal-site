@@ -17,11 +17,20 @@
   const detail = document.getElementById("portion-detail");
   const shareButton = document.getElementById("portion-share");
   const shareStatus = document.getElementById("portion-share-status");
+  const addMealButton = document.getElementById("add-to-meal");
+  const mealAddStatus = document.getElementById("meal-add-status");
+  const mealTotal = document.getElementById("meal-total");
+  const mealCount = document.getElementById("meal-count");
+  const mealEmpty = document.getElementById("meal-empty");
+  const mealList = document.getElementById("meal-items");
+  const clearMealButton = document.getElementById("clear-meal");
 
   const numberFormat = new Intl.NumberFormat("en-US", { maximumFractionDigits: 0 });
   let catalog = null;
   let records = [];
   let selectedRecord = null;
+  let temporaryMeal = [];
+  let nextMealItemId = 1;
   let catalogLoading = false;
   let searchTimer = null;
 
@@ -116,6 +125,7 @@
       result.textContent = "— kcal";
       detail.textContent = copy.noEnergyEstimate;
       shareButton.disabled = true;
+      addMealButton.disabled = true;
       return null;
     }
     if (rawWeight === "" || !Number.isFinite(grams) || grams < 1 || grams > 3000) {
@@ -123,6 +133,7 @@
       detail.textContent = copy.invalidWeight;
       gramsInput.setAttribute("aria-invalid", "true");
       shareButton.disabled = true;
+      addMealButton.disabled = true;
       return null;
     }
 
@@ -132,8 +143,37 @@
     result.textContent = `≈ ${formattedKcal} kcal`;
     detail.textContent = copy.estimate(normalizedGrams, selectedRecord.name);
     shareButton.disabled = false;
+    addMealButton.disabled = false;
     shareButton.dataset.summary = copy.shareSummary(selectedRecord.name, formattedKcal, normalizedGrams);
-    return { kcal: formattedKcal, grams: normalizedGrams };
+    return { kcal, formattedKcal, grams: normalizedGrams };
+  }
+
+  function renderTemporaryMeal() {
+    const total = temporaryMeal.reduce((sum, item) => sum + item.kcal, 0);
+    mealTotal.textContent = `${temporaryMeal.length ? "≈ " : ""}${numberFormat.format(total)} kcal`;
+    mealCount.textContent = `${temporaryMeal.length} ${temporaryMeal.length === 1 ? "portion" : "portions"} · rounded estimates`;
+    mealEmpty.hidden = temporaryMeal.length > 0;
+    clearMealButton.disabled = temporaryMeal.length === 0;
+    mealList.replaceChildren();
+
+    for (const item of temporaryMeal) {
+      const row = document.createElement("li");
+      row.className = "meal-item";
+      const itemText = document.createElement("span");
+      itemText.className = "meal-item-copy";
+      itemText.textContent = `${item.name} · ${item.grams} g · ≈ ${numberFormat.format(item.kcal)} kcal`;
+      const remove = document.createElement("button");
+      remove.type = "button";
+      remove.className = "meal-remove";
+      remove.textContent = "Remove";
+      remove.setAttribute("aria-label", `Remove ${item.name} from this temporary meal estimate`);
+      remove.addEventListener("click", () => {
+        temporaryMeal = temporaryMeal.filter((entry) => entry.id !== item.id);
+        renderTemporaryMeal();
+      });
+      row.append(itemText, remove);
+      mealList.append(row);
+    }
   }
 
   function selectRecord(record) {
@@ -166,6 +206,7 @@
     if (selectedRecord && !matches.some((record) => record.id === selectedRecord.id)) {
       selectedRecord = null;
       selectedPanel.hidden = true;
+      addMealButton.disabled = true;
     }
     if (!query) {
       status.textContent = copy.typeToSearch(catalog.recordCount);
@@ -235,6 +276,7 @@
       catalog = null;
       records = [];
       selectedPanel.hidden = true;
+      addMealButton.disabled = true;
       status.textContent = copy.loadError;
       retryButton.hidden = false;
       setBusy(false);
@@ -275,6 +317,23 @@
     gramsInput.value = displayGrams(selectedRecord.serving.grams);
     updateEstimate();
   });
+  addMealButton.addEventListener("click", () => {
+    const estimate = updateEstimate();
+    if (!estimate || !selectedRecord) return;
+    temporaryMeal.push({
+      id: nextMealItemId++,
+      name: selectedRecord.name,
+      grams: estimate.grams,
+      kcal: estimate.kcal,
+    });
+    renderTemporaryMeal();
+    mealAddStatus.textContent = `Added ${selectedRecord.name} to the temporary meal estimate.`;
+  });
+  clearMealButton.addEventListener("click", () => {
+    temporaryMeal = [];
+    mealAddStatus.textContent = "Temporary meal estimate cleared.";
+    renderTemporaryMeal();
+  });
   retryButton.addEventListener("click", loadCatalog);
   shareButton.addEventListener("click", async () => {
     const estimate = updateEstimate();
@@ -298,5 +357,6 @@
     }
   });
 
+  renderTemporaryMeal();
   loadCatalogNearViewport();
 })();

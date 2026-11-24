@@ -392,9 +392,31 @@ a:focus-visible { outline: 3px solid var(--clay); outline-offset: 4px; border-ra
 .portion-share { display: flex; flex-wrap: wrap; align-items: center; gap: 12px; margin-top: 18px; padding-top: 17px; border-top: 1px solid var(--rule); }
 .portion-share [role="status"] { color: var(--muted); font-size: 11px; line-height: 1.5; }
 .portion-share [role="status"]:empty { display: none; }
+.meal-add-row { display: flex; flex-wrap: wrap; align-items: center; gap: 11px; margin-top: 14px; }
+.meal-add-button, .meal-clear, .meal-remove { min-height: 40px; padding: 9px 13px; border: 1px solid var(--green); border-radius: 8px; color: #fffdf7; background: var(--green); font: 650 12px var(--sans); cursor: pointer; }
+.meal-add-button:disabled, .meal-clear:disabled { opacity: .45; cursor: not-allowed; }
+.meal-add-button:focus-visible, .meal-clear:focus-visible, .meal-remove:focus-visible { outline: 3px solid var(--clay); outline-offset: 3px; }
+.meal-add-row [role="status"] { color: var(--muted); font-size: 11px; line-height: 1.5; }
+.meal-estimate { margin-top: 20px; padding: 19px; border: 1px solid var(--rule); border-radius: 12px; background: #f6f1e6; }
+.meal-estimate-head { display: flex; justify-content: space-between; align-items: flex-start; gap: 16px; }
+.meal-estimate-head .portion-label { margin: 0 0 7px; }
+.meal-estimate-head h3 { margin: 0; color: var(--ink); font: 400 25px/1.1 var(--serif); }
+.meal-estimate-note { max-width: 45ch; margin: 7px 0 0; color: var(--muted); font-size: 11px; line-height: 1.55; }
+.meal-estimate-total { min-width: 120px; text-align: right; }
+.meal-estimate-total span, .meal-estimate-total small { display: block; color: var(--muted); font-size: 10px; line-height: 1.5; }
+.meal-estimate-total strong { display: block; margin: 3px 0; color: var(--green-deep); font-size: 23px; letter-spacing: -.04em; }
+.meal-empty { margin: 17px 0 0; color: var(--muted); font-size: 12px; line-height: 1.55; }
+.meal-items { display: grid; gap: 7px; margin: 15px 0 0; padding: 0; list-style: none; }
+.meal-item { display: flex; justify-content: space-between; align-items: center; gap: 12px; padding: 10px 0; border-top: 1px solid var(--rule); }
+.meal-item-copy { color: var(--ink); font-size: 11px; line-height: 1.5; }
+.meal-remove { min-height: 32px; padding: 6px 9px; border-color: var(--rule); color: var(--green-deep); background: transparent; font-size: 10px; }
+.meal-clear { min-height: 34px; margin-top: 14px; padding: 7px 10px; color: var(--green-deep); background: transparent; font-size: 11px; }
 @media (max-width: 760px) {
   .portion-tool { padding: 21px 17px; }
   .portion-share { align-items: flex-start; flex-direction: column; }
+  .meal-estimate-head { flex-direction: column; }
+  .meal-estimate-total { text-align: left; }
+  .meal-item { align-items: flex-start; }
 }
 
 /* Full catalog search and portion estimate */
