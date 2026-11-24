@@ -8,14 +8,15 @@
     potato: { name: "Potato, baked, flesh and skin, without salt", kcal: 93 },
     milk: { name: "Milk, whole, 3.25% milkfat, with added vitamin D", kcal: 61 },
     apple: { name: "Gala Apple, Raw, with Skin", kcal: 57 },
-    porridge: { name: "Horse Gram Porridge with Milk", kcal: 102 },
+    banana: { name: "Bananas, Raw", kcal: 89 },
+    rice: { name: "Rice, white, long-grain, regular, cooked", kcal: 130 },
   };
   const questionBank = [
     ["oatmeal", "egg"],
-    ["egg", "porridge"],
-    ["potato", "milk"],
-    ["milk", "apple"],
-    ["porridge", "potato"],
+    ["egg", "banana"],
+    ["potato", "rice"],
+    ["rice", "apple"],
+    ["banana", "milk"],
   ];
   const buttons = [...board.querySelectorAll("[data-choice]")];
   const step = document.getElementById("challenge-step");
