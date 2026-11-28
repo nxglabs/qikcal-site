@@ -25,7 +25,7 @@ People search the bundled food library, choose a serving or enter grams, log mea
 ## Capabilities and Constraints
 
 - Native iPhone app targeting iOS 17 and later.
-- App Store availability is selected for all 175 countries and regions. On 23 November 2026, the U.S. and U.K. were publicly verified as Available; the other 173 were still Processing to Available in App Store Connect. Paid marketing and proactive promotional outreach are limited to the U.S. and U.K.
+- App Store availability was selected for all 175 countries and regions in the 23 November 2026 App Store Connect snapshot: the U.S. and U.K. were publicly verified as Available, while the other 173 were still Processing to Available. At 16:32 IST on 28 November, public iTunes Lookup returned one v1.0 listing each for the U.S. and U.K. at $19.99 and £14.99. This verifies those two storefronts only; current availability elsewhere is unverified. Paid marketing and proactive promotional outreach are limited to the U.S. and U.K.
 - Version 1.0 is approved and downloadable (READY_FOR_SALE; workflow 45110157958 on 23 November 2026).
 - Verified storefront prices on 23 November 2026 are $19.99 in the United States and £14.99 in the United Kingdom; the App Store listing controls the final regional price shown to customers.
 - The diary is local, with no account, analytics SDK, advertising SDK, server-side diary storage, or HealthKit access.

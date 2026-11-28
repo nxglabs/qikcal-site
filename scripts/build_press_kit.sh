@@ -24,7 +24,7 @@ ABOUT
 QikCal is an offline-first food diary for iPhone. People can search the QikCal Food Library, log portions, save meals they repeat, and review a seven-day view. The diary stays on the iPhone.
 
 AVAILABILITY
-Version 1.0 is available in 175 App Store countries and regions.
+Version 1.0 is available in the U.S. and U.K.
 United States: https://apps.apple.com/us/app/qikcal-calorie-tracker/id6835332402
 United Kingdom: https://apps.apple.com/gb/app/qikcal-calorie-tracker/id6835332402
 
